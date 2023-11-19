@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 120vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+}
+.form-container, .display-container {
+    border: none;
+    padding: 30px;
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.form-container input[type=text], .form-container select, .form-container input[type=url] {
+    width: 100%;
+    padding: 7px 30px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1.5px solid #5bdc7b;
+    box-sizing: border-box;
+}
+.form-container input[type=submit] {
+    background-color: rgb(76, 175, 144);
+    color: rgb(244, 244, 244);
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.5s ease-in-out;
+}
+.form-container label i {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.form-container input[type=submit]:hover {
+    opacity: 0.8;
+    background-color: purple;
+}
+
+.display-container img {
+    width: 80%;
+    height: 80%;
+
+}
+.form-container label {
+    margin-left: 5px;
+}
+
+.display-container {
+    display: none; /* Начальное состояние блока */
+    border: none;
+    padding: 20px;
+    width: 40%;
+    display: grid;
+    place-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    opacity: 0; /* Начальная непрозрачность */
+}
+
+.animation {
+    animation: fadeIn 0.5s ease-in-out forwards; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-80px); /* Дополнительный эффект, например, поднимание элемента */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
