@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="positionEmoji"></div>
+    <div class="form-container">
+        <form action="/submit_profile" method="post">
+            <label for="userphoto">Фотография пользователя</label><br>
+            <input type="file" id="userphoto" name="userphoto"><br>
+            <label for="username">Имя и фамилия</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="company">Работа в компании</label><br>
+            <div class="custom-dropdown">
+                <label for="company">
+                    <i class="fab fa-building"></i>
+                    Выберите компанию
+                </label>
+                <select id="company" name="company">
+                    <option value="meta"><i class="fab fa-meta"></i>Meta</option>
+
+                    <option value="apple">Apple</option>
+                    <option value="amazon">Amazon</option>
+                    <option value="netflix">Netflix</option>
+                    <option value="google">Google</option>
+                    <option value="microsoft">Microsoft</option>
+                </select>
+                <label for="position">Текущая должность в компании:</label><br>
+                <input type="radio" id="intern" name="position" value="intern">
+                <label for="intern">Software Engineer Intern</label><br>
+                <input type="radio" id="junior" name="position" value="junior">
+                <label for="junior">Junior Software Engineer</label><br>
+                <input type="radio" id="engineer" name="position" value="engineer">
+                <label for="engineer">Software Engineer</label><br>
+                <input type="radio" id="senior" name="position" value="senior">
+                <label for="senior">Senior Software Engineer</label><br>
+
+                <div id="errorContainer"></div>
+            </div>
+            <label for="github">
+                <i class="fab fa-github"></i>
+                Ссылка на Github
+            </label>
+            <input type="url" id="github" name="github" placeholder="Github"><br>
+
+            <label for="linkedin">
+                <i class="fab fa-linkedin"></i>
+                Ссылка на LinkedIn
+            </label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn"><br> 
+
+            <label for="instagram">
+                <i class="fab fa-instagram"></i>
+                Ссылка на Instagram
+            </label>     
+            <input type="url" id="instagram" name="instagram" placeholder="Instagram"><br>
+
+            <label for="telegram">
+                <i class="fab fa-telegram"></i>
+                Ссылка на Telegram
+            </label>
+            <input type="url" id="telegram" name="telegram" placeholder="Telegram"><br>
+
+            <!-- Your existing submit button -->
+            <input type="submit" value="Отправить" onclick="animateDisplayContainer()">
+        </form>
+    </div>
+    <div class="display-container" id="display-container">
+    <!-- Здесь будут отображаться данные пользователя -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
